@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" role="heading">
+  <mat-icon aria-hidden="false" class="p-8">sports_esports</mat-icon>
+  <span>{{titleApp}}</span>
+</mat-toolbar>
+
+<div class="p-16">
+  <h2 class="text-center">Seleziona una carta da scoprire. Puoi girare al massimo due carte alla volta. Le carte uguali verranno rimosse!</h2>
+  <div class="grid p-16">
+    <memory-card *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
+    </memory-card>
+  </div>
+</div>
