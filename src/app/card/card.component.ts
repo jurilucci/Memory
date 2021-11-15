@@ -25,6 +25,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
       -moz-box-shadow: 10px 10px 43px -18px rgba(0, 0, 0, 0.75);
       box-shadow: 10px 10px 43px -18px rgba(0, 0, 0, 0.75);
       border-radius: 5px;
+      border: 2px solid white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +36,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     }
 
     .border-success {
-      border: 2px solid chartreuse;
+      border: 2px solid chartreuse !important;
     }
 
     .back,
