@@ -5,7 +5,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'memory-card',
   template: `
-    <div [hidden]="!data.isLoaded" class="card" (click)="cardClicked.emit()" [@cardFlip]="data.state">
+    <div [hidden]="!data.isLoaded" [ngClass]="data.state === 'matched' ? 'card border-success' : 'card'" (click)="cardClicked.emit()" [@cardFlip]="data.state">
       <div class="back">
         <img alt="backImage" src="assets/card-back.jpg" (load)="data.isLoaded = true">
       </div>
@@ -34,6 +34,10 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
       transform-style: preserve-3d;
     }
 
+    .border-success {
+      border: 2px solid chartreuse;
+    }
+
     .back,
     .front {
       position: absolute;
@@ -48,6 +52,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 
     .front {
       transform: rotateY(180deg);
+      pointer-events: none;
     }
 
     img {
@@ -67,9 +72,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         transform: 'rotateY(180deg)'
       })),
       state('matched', style({
-        display: 'none',
-        transform: 'scale(0.05)',
-        opacity: 0
+        transform: 'rotateY(180deg)'
       })),
       transition('default => flipped', [
         animate('400ms')
