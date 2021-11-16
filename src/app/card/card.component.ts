@@ -32,6 +32,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
       height: 200px;
       cursor: pointer;
       position: relative;
+      -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
     }
 
@@ -48,10 +49,16 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     }
 
     .back {
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
       transform: rotateY(0deg);
     }
 
     .front {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
       transform: rotateY(180deg);
       pointer-events: none;
     }

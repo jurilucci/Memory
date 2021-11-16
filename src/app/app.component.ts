@@ -83,7 +83,8 @@ export class AppComponent implements OnInit {
 
           if (this.matchedCount === this.cardImagesUrl.length) {
             const dialogRef = this.dialog.open(RestartDialogComponent, {
-              disableClose: true
+              disableClose: true,
+              data: { movesCount: this.movesCount },
             });
 
             dialogRef.afterClosed().subscribe(_ => {
